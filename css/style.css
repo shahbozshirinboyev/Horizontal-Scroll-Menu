@@ -30,6 +30,7 @@
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 .scrollable-tabs-container ul::-webkit-scrollbar{
     display: none;
@@ -45,6 +46,8 @@
     white-space: nowrap;
 }
 .scrollable-tabs-container a.active{
+    transition: all;
+    transition-duration: 200ms;
     background-color: #fff;
     color: #000;
 }

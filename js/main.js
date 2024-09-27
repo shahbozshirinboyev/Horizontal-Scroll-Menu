@@ -48,8 +48,27 @@ rightArrow.addEventListener("click", () => {
 });
 
 leftArrow.addEventListener("click", () => {
-    tabsList.scrollLeft -= 200;
-    manageIcons();
-  });
+  tabsList.scrollLeft -= 200;
+  manageIcons();
+});
 
 tabsList.addEventListener("scroll", manageIcons);
+
+let dragging = false;
+
+const drag = (e) => {
+    if(!dragging) return;
+    tabsList.classList.add("dragging");
+    tabsList.scrollLeft -= e.movementX;
+}
+
+tabsList.addEventListener("mousedown", () => {
+  dragging = true;
+});
+
+tabsList.addEventListener("mousemove", drag);
+
+document.addEventListener("mouseup", () => {
+    dragging = false;
+    tabsList.classList.remove("dragging")
+})

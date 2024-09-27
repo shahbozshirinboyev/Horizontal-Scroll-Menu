@@ -17,6 +17,7 @@
     border-radius: 50%;
     transition: all;
     transition-duration: 200ms;
+    pointer-events: auto;
 }
 .scrollable-tabs-container i:hover{
     background: #333;
@@ -31,6 +32,12 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-behavior: smooth;
+}
+.scrollable-tabs-container ul.dragging{
+    scroll-behavior: auto;
+}
+.scrollable-tabs-container ul.dragging a{
+    pointer-events: none;
 }
 .scrollable-tabs-container ul::-webkit-scrollbar{
     display: none;
@@ -60,6 +67,7 @@
     display: none;
     align-items: center;
     padding: 0 10px;
+    pointer-events: none;
 }
 
 .scrollable-tabs-container .left-arrow.active,
